@@ -4,8 +4,12 @@
 
 int main(int argc, char * argv[])
 {
-
-	FILE *flopPtr = fopen("flop", "r");
+	if(argc != 2)
+	{
+		printf("Not enough arguments");
+		return -1;
+	}
+	FILE *flopPtr = fopen(argv[1], "r");
 	if(flopPtr == NULL)
 		return -1;
 	char * version = malloc(11);
